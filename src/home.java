@@ -43,6 +43,11 @@ public class home extends javax.swing.JPanel {
         jButton1.setForeground(new java.awt.Color(102, 0, 0));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/manage room.png"))); // NOI18N
         jButton1.setText("Manager Room");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 6, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -106,6 +111,11 @@ public class home extends javax.swing.JPanel {
             System.exit(0);
         }
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new manageRoom().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
