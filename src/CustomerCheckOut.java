@@ -215,7 +215,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         } 
         catch (Exception e) 
         {
-            JOptionePane.showMessageDialog(null,e);
+            JOptionPane.showMessageDialog(null,e);
         }
        
     }//GEN-LAST:event_formComponentShown
@@ -225,7 +225,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         String roomNo=jTextField1.getText();
         try 
         {
-            ResultSet rs=Select.getData("select *from customer where roomNo='"+roomNo"' and checkout is NULL");
+            ResultSet rs=Select.getData("select *from customer where roomNo='"+roomNo+"' and checkout is NULL");
             if(rs.next())
             {
                 jTextField1.setEditable(false);
@@ -242,7 +242,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 java.util.Date dateBefore=myFormat.parse(dataBeforeString);
                 String dateAfterString=myFormat.format(cal.getTime());
                 java.util.Date dateAfter=myFormat.parse(dateAfterString);
-                long difference=dateAfter.getTime()-dateBefoce.getTime();
+                long difference=dateAfter.getTime()-dateBefore.getTime();
                 int noOfDayStay=(int)(difference/(1000*60*60*24));
                 if(noOfDayStay==0)
                     noOfDayStay=1;
@@ -259,7 +259,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         } 
         catch (Exception e) 
         {
-            JOptionePane.showMessageDialog(null,e);
+            JOptionPane.showMessageDialog(null,e);
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -311,7 +311,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         } 
         catch (Exception e) 
         {
-            JOptionePane.showMessageDialog(null,e);
+            JOptionPane.showMessageDialog(null,e);
         }
         doc.close();
         int a=JOptionPane.showConfirmDialog(null, "Do you want to Print Bill","Select",JOptionPane.YES_NO_OPTION);
