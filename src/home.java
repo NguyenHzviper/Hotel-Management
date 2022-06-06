@@ -66,6 +66,11 @@ public class home extends javax.swing.JPanel {
         jButton4.setForeground(new java.awt.Color(102, 0, 0));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Details Bill.png"))); // NOI18N
         jButton4.setText("Customer Details Bill");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(769, 6, -1, -1));
 
         jButton5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -116,6 +121,11 @@ public class home extends javax.swing.JPanel {
         // TODO add your handling code here:
         new manageRoom().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        new CustomerDetailsBill().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

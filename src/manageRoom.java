@@ -9,6 +9,8 @@
  */
 import project.*;
 import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 public class manageRoom extends javax.swing.JFrame {
 
     /**
@@ -145,6 +147,18 @@ public class manageRoom extends javax.swing.JFrame {
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
+        ResultSet rs = Select.getData("Select *from room");
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        try{
+            while(rs.next()){
+                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)});
+                
+            }
+            rs.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_formComponentShown
 
     /**
