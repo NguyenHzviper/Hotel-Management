@@ -89,10 +89,10 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(102, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Check Out.png"))); // NOI18N
         jLabel1.setText("Customer Check Out");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 22, 217, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 22, 270, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Room Number");
@@ -115,33 +115,35 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Customer Name");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 96, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 140, -1));
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 165, 205, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Check IN Date");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 130, 89, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 130, 120, -1));
 
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 165, 202, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Check OUT Date (Today)");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 130, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, -1, -1));
 
         jTextField4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 165, 220, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 220, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Customer Mobile Number");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(967, 130, 146, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(967, 130, 190, -1));
 
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(967, 165, 197, -1));
 
+        jButton2.setBackground(new java.awt.Color(102, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Search");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,10 +168,10 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Total Amount to Collect From Customer");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 217, 220, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, 280, -1));
 
         jTextField8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 252, 220, -1));
+        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 220, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Email");
@@ -178,6 +180,8 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         jTextField9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(965, 252, 199, -1));
 
+        jButton3.setBackground(new java.awt.Color(102, 0, 0));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Check Out");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +190,8 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 293, -1, -1));
 
+        jButton4.setBackground(new java.awt.Color(102, 0, 0));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Clear");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
