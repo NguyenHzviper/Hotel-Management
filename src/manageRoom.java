@@ -107,7 +107,6 @@ public class manageRoom extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 338, -1, -1));
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField2.setText("jTextField2");
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 373, 464, -1));
 
         jButton2.setBackground(new java.awt.Color(102, 0, 0));
@@ -139,7 +138,7 @@ public class manageRoom extends javax.swing.JFrame {
         String bed = (String)jComboBox2.getSelectedItem();
         String price = jTextField2.getText();
         
-        String Query = "insert into room values('"+roomNo+"','"+roomType+"','"+price+"','Not Booked')";
+        String Query = "insert into room values('"+roomNo+"','"+roomType+"','"+bed+"','"+price+"','Not Booked')";
         InsertUpdateDelete.setData(Query, "Successfully Updated");
         setVisible(false);
         new manageRoom().setVisible(true);

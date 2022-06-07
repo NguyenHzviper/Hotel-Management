@@ -44,6 +44,11 @@ public class home extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(102, 51, 0));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/manage room.png"))); // NOI18N
         jButton1.setText("Manager Room");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 15, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Algerian", 1, 14)); // NOI18N
@@ -138,6 +143,11 @@ public class home extends javax.swing.JFrame {
         // TODO add your handling code here:
         new CustomerCheckIn().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new manageRoom().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
