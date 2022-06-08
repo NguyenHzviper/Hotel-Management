@@ -206,7 +206,6 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 293, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
-        jLabel11.setText("jLabel11");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -60, 1580, 720));
 
         pack();
@@ -288,12 +287,12 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         String email=jTextField9.getText();
         
         String checkOut=jTextField4.getText();
-        String numberOfDaysStay=jTextField7.getText();
+        String numberOfDayStay=jTextField7.getText();
         String totalAmount=jTextField8.getText();
         roomNo=jTextField1.getText();
-        Query="update customer set numberOfDaysStays='"+numberOfDaysStay+"',totalAmount='"+totalAmount+"',checkOut='"+checkOut+"' where id='"+id+"'";
+        Query="update customer set numberOfDayStay='"+numberOfDayStay+"',totalAmount='"+totalAmount+"',checkOut='"+checkOut+"' where id='"+id+"'";
         InsertUpdateDelete.setData(Query,"");
-        Query="update room set Status='Not Booked' where roomNo'"+roomNo+"'";
+        Query="update room set Status='Not Booked' where roomNo='"+roomNo+"'";
         InsertUpdateDelete.setData(Query,"");
         String path="E:\\";
         com.itextpdf.text.Document doc=new com.itextpdf.text.Document();
@@ -314,7 +313,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
             PdfPTable tb1=new PdfPTable(4);
             tb1.addCell("Check IN Date: "+jTextField3.getText());
             tb1.addCell("Check OUT Date: "+checkOut);
-            tb1.addCell("No of Days Stay: "+numberOfDaysStay);
+            tb1.addCell("No of Days Stay: "+numberOfDayStay);
             tb1.addCell("Total Amount Paid: "+totalAmount);
             doc.add(tb1);
             doc.add(paragraph2);

@@ -108,8 +108,8 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 0, 40, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Name");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        jLabel2.setText("Họ Tên");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 60, -1));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,21 +120,21 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 350, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Mobile Number");
+        jLabel3.setText("Số điện thoại");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 266, 350, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Nationality");
+        jLabel4.setText("Quốc gia");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 306, -1, -1));
 
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 350, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Gender");
+        jLabel5.setText("Giới tính");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 386, -1, -1));
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -149,8 +149,8 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 497, 350, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("Id proof");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, -1, -1));
+        jLabel7.setText("CMND/CCCD");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 130, -1));
 
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +179,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 171, 43, -1));
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single ", "Double", " " }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single ", "Double", "Triple", " " }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -319,7 +319,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
                 if(!price.equals("")){
                     Query = "update room set status='Booked' where roomNo='"+roomNo+"'";
                     InsertUpdateDelete.setData(Query,"");
-                    Query = "insert into customer(id,name,mobilePhone,nationality,gender,email,idProof,address,checkIn,roomNo,bed,roomType,pricePerDay) value("+id+",'"+name+"','"+mobileNumber+"','"+nationality+"','"+gender+"','"+email+"','"+idProof+"','"+address+"','"+checkIN+"','"+roomNo+"','"+bed+"','"+roomType+"','"+price+"')";
+                    Query = "insert into customer(id,name,mobileNumber,nationality,gender,email,idProof,address,checkIn,roomNo,bed,roomType,pricePerDay) value("+id+",'"+name+"','"+mobileNumber+"','"+nationality+"','"+gender+"','"+email+"','"+idProof+"','"+address+"','"+checkIN+"','"+roomNo+"','"+bed+"','"+roomType+"','"+price+"')";
                     InsertUpdateDelete.setData(Query, "Customer Check In Successfully");
                     setVisible(false);
                     new CustomerCheckIn().setVisible(true);
