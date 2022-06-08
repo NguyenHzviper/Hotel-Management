@@ -72,7 +72,7 @@ public class manageRoom extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Room Number", "Room Type", "Bed", "Price", "Status"
+                "Số phòng", "Loại phòng", "Loại giường", "Giá", "Trạng thái"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -80,14 +80,14 @@ public class manageRoom extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 110, 560, 484));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Room Number");
+        jLabel2.setText("Số phòng");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 110, -1, -1));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 145, 464, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Room Type");
+        jLabel3.setText("Loại phòng");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 186, 117, -1));
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -100,8 +100,8 @@ public class manageRoom extends javax.swing.JFrame {
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 221, 464, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Bed");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 262, 37, -1));
+        jLabel4.setText("Loại giường");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 262, 90, -1));
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Double", "Triple" }));
@@ -113,7 +113,7 @@ public class manageRoom extends javax.swing.JFrame {
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 297, 464, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Price");
+        jLabel5.setText("Giá");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 338, -1, -1));
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -122,7 +122,7 @@ public class manageRoom extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(102, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Add Room");
+        jButton2.setText("Thêm");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

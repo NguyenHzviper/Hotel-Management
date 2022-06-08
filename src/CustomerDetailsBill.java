@@ -72,29 +72,29 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1213, 18, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Search By Check OUT Date");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, -1, -1));
+        jLabel2.setText("Tìm kiếm theo ngày trả phòng");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 216, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 216, -1));
 
         jButton2.setBackground(new java.awt.Color(102, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Search");
+        jButton2.setText("Tìm kiếm");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 80, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 80, 120, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Name", "Mobile Number", "Nationality", "Gender", "Email", "IDProof", "Address", "Check IN Date", "Room Number", "Bed", "Room Type", "Price Per Days", "Number Of Days Stay", "Total Amount", "Check OUT Date"
+                "ID", "Họ tên", "SĐT", "Quốc gia", "Giới tính", "Email", "CMND/CCCD", "Địa chỉ", "Ngày nhận phòng", "Số phòng", "Loại giường", "Loại phòng", "Giá/ngày", "Số ngày ở", "Tổng tiền", "Ngày trả phòng"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -103,8 +103,18 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(4).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(8).setPreferredWidth(90);
+            jTable1.getColumnModel().getColumn(9).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(10).setPreferredWidth(60);
+            jTable1.getColumnModel().getColumn(11).setPreferredWidth(60);
+            jTable1.getColumnModel().getColumn(13).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(15).setPreferredWidth(80);
+        }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 1160, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 1240, -1));
 
         jLabel3.setFont(new java.awt.Font("Algerian", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 0, 0));

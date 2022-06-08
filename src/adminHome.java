@@ -47,7 +47,7 @@ public class adminHome extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Algerian", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 0, 0));
-        jLabel1.setText("Welcome Admin !");
+        jLabel1.setText("Xin Chào !");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 14, 480, 78));
 
         jButton1.setFont(new java.awt.Font("Algerian", 1, 14)); // NOI18N
@@ -73,7 +73,7 @@ public class adminHome extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setText("Search By Name Of Email");
+        jLabel2.setText("Tìm kiếm theo Email");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 160, 20));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -82,13 +82,13 @@ public class adminHome extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(102, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Search");
+        jButton3.setText("Tìm kiếm");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 160, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 160, 110, -1));
 
         jButton4.setBackground(new java.awt.Color(102, 0, 0));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -106,7 +106,7 @@ public class adminHome extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "Email", "Security Query", "Address", "Status"
+                "Họ tên", "Email", "Security Query", "Địa chỉ", "Trạng thái"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {

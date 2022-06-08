@@ -161,22 +161,22 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 350, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Address");
+        jLabel8.setText("Địa chỉ");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, -1));
 
         jTextField6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 266, 350, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setText("Check In Date(Today)");
+        jLabel9.setText("Ngày nhận phòng");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 306, -1, -1));
 
         jTextField7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 350, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("Bed");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 171, 43, -1));
+        jLabel10.setText("Loại giường");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 171, 90, -1));
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single ", "Double", "Triple", " " }));
@@ -188,7 +188,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 201, 350, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setText("Room Type");
+        jLabel11.setText("Loại phòng");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 240, -1, -1));
 
         jComboBox3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -201,7 +201,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 270, 350, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setText("Room Number");
+        jLabel12.setText("Số phòng");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 310, 110, -1));
 
         jComboBox4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -213,7 +213,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 340, 350, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel13.setText("Price");
+        jLabel13.setText("Giá");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 390, 43, -1));
 
         jTextField8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -222,7 +222,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(102, 51, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Allote Room");
+        jButton2.setText("Đặt Phòng");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -233,7 +233,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(102, 51, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Clear");
+        jButton3.setText("Xóa");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
