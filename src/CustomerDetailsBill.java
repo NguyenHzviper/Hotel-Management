@@ -171,10 +171,10 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         TableModel model = jTable1.getModel();
         String id = model.getValueAt(index, 0).toString();
         try{
-            if ((new File("D:\\"+id+".pdf")).exists()){
+            if ((new File("E:\\"+id+".pdf")).exists()){
                 Process p = Runtime
                         .getRuntime()
-                        .exec("rund1132 url.dll,FileProtocolHandler D:\\"+id+".pdf");
+                        .exec("rundll32 url.dll,FileProtocolHandler E:\\"+id+".pdf");
             }
             else{
                 JOptionPane.showMessageDialog(null,"File is not exists");

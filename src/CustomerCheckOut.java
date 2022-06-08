@@ -320,9 +320,9 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         {
             PdfWriter.getInstance(doc, new FileOutputStream(path+""+id+".pdf"));
             doc.open();
-            Paragraph paragraph1=new Paragraph("                                Hotel Management System\\n");
+            Paragraph paragraph1=new Paragraph("                                Hotel Management System\n");
             doc.add(paragraph1);
-            Paragraph paragraph2=new Paragraph("                                Hotel Management System\\n");
+            Paragraph paragraph2=new Paragraph("                                Hotel Management System\n");
             doc.add(paragraph2);
             Paragraph paragraph3=new Paragraph("\tBill ID: "+id+"\nCustomer Details:\nName: "+name+"\nMobile Number: "+mobileNumber+"\nEmail:"+email+"\n ");
             doc.add(paragraph3);
