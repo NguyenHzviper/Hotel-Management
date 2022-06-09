@@ -97,7 +97,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Số phòng");
@@ -126,7 +126,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(11).setPreferredWidth(30);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 1240, 240));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 1240, 240));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Họ tên khách hàng");
@@ -225,8 +225,8 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 293, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/all pages background.png"))); // NOI18N
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -60, 1580, 720));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/check.png"))); // NOI18N
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -324,10 +324,10 @@ public class CustomerCheckOut extends javax.swing.JFrame {
             doc.add(paragraph1);
             Paragraph paragraph2=new Paragraph("***************************************************************************");
             doc.add(paragraph2);
-            Paragraph paragraph3=new Paragraph("\tMã hóa đơn: "+id+"\nChi tiết khách hàng:\nName: "+name+"\nMobile Number: "+mobileNumber+"\nEmail:"+email+"\n ");
+            Paragraph paragraph3=new Paragraph("\tMã hóa đơn: "+id+"\nChi tiết khách hàng:\nHọ tên: "+name+"\nSố điện thoại: "+mobileNumber+"\nEmail:"+email+"\n ");
             doc.add(paragraph3);
             doc.add(paragraph2);
-            Paragraph paragraph4=new Paragraph("\tRoom Deatils:\nNumber: "+jTextField1.getText()+"\nType: "+roomType+"\nBed: "+bed+"\nPrice Per Day: "+jTextField6.getText()+"");
+            Paragraph paragraph4=new Paragraph("\tChi tiết phòng:\nSố phòng: "+jTextField1.getText()+"\nLoại phòng: "+roomType+"\nLoại giường: "+bed+"\nGiá/ngày: "+jTextField6.getText()+"");
             doc.add(paragraph4);
             doc.add(paragraph2);
             PdfPTable tb1=new PdfPTable(4);
@@ -370,11 +370,8 @@ public class CustomerCheckOut extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         int a = JOptionPane.showConfirmDialog(null, "Bạn chắc chắn muốn đóng ứng dụng này?","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0) {
-            System.exit(0);
-        }
+        setVisible(false); 
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
