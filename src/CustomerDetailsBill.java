@@ -177,7 +177,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
                         .exec("rundll32 url.dll,FileProtocolHandler E:\\"+id+".pdf");
             }
             else{
-                JOptionPane.showMessageDialog(null,"File is not exists");
+                JOptionPane.showMessageDialog(null,"File này không tồn tại");
             }
         }
         catch(Exception e){

@@ -186,7 +186,7 @@ public class signup extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to close Application?","Select",JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Bạn muốn đóng ứng dụng này?","Select",JOptionPane.YES_NO_OPTION);
         if(a==0) {
             System.exit(0);
         }

@@ -127,7 +127,7 @@ public class adminHome extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to Close Application", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Bạn thực sự muốn đóng ứng dụng này", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0){
             System.exit(0);
         }
@@ -135,7 +135,7 @@ public class adminHome extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to Logout", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Bạn muốn Logout?", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0){
             setVisible(false);
             new login().setVisible(true);

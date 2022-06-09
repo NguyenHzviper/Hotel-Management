@@ -117,7 +117,7 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to close Application?","Select",JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Bạn thực sự muốn đóng ứng dụng?","Select",JOptionPane.YES_NO_OPTION);
         if(a==0) {
             System.exit(0);
         }
@@ -159,7 +159,7 @@ public class login extends javax.swing.JFrame {
             }
         }
         if(check==0) {
-            JOptionPane.showMessageDialog(null,"Incorrect Email or Password");
+            JOptionPane.showMessageDialog(null,"Email or Mật khẩu sai");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

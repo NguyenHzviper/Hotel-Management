@@ -285,7 +285,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 bed=rs.getString(11);
             }
             else 
-                JOptionPane.showMessageDialog(null,"Room Number is not Booked or Room Number Dose not Exist");
+                JOptionPane.showMessageDialog(null,"Số phòng này đã được đăt or Số phòng này không tồn tại");
         } 
         catch (Exception e) 
         {
@@ -320,9 +320,9 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         {
             PdfWriter.getInstance(doc, new FileOutputStream(path+""+id+".pdf"));
             doc.open();
-            Paragraph paragraph1=new Paragraph("                                Hotel Management System\n");
+            Paragraph paragraph1=new Paragraph("                               Hotel Management System\n");
             doc.add(paragraph1);
-            Paragraph paragraph2=new Paragraph("                                Hotel Management System\n");
+            Paragraph paragraph2=new Paragraph("                               Hotel Management System\n");
             doc.add(paragraph2);
             Paragraph paragraph3=new Paragraph("\tBill ID: "+id+"\nCustomer Details:\nName: "+name+"\nMobile Number: "+mobileNumber+"\nEmail:"+email+"\n ");
             doc.add(paragraph3);
@@ -344,7 +344,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,e);
         }
         doc.close();
-        int a=JOptionPane.showConfirmDialog(null, "Do you want to Print Bill","Select",JOptionPane.YES_NO_OPTION);
+        int a=JOptionPane.showConfirmDialog(null, "Bạn có muốn in hóa đơn","Select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
             try 
@@ -356,7 +356,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                             .exec("rundll32 url.dll,FileProtocolHandler E:\\"+id+".pdf");
                 }
                 else
-                    System.out.println("File is not Exists");
+                    System.out.println("File này không tồn tại");
             } 
             catch (Exception e) 
             { 
@@ -370,7 +370,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         int a = JOptionPane.showConfirmDialog(null, "Do you really want to close Application?","Select",JOptionPane.YES_NO_OPTION);
+         int a = JOptionPane.showConfirmDialog(null, "Bạn chắc chắn muốn đóng ứng dụng này?","Select",JOptionPane.YES_NO_OPTION);
         if(a==0) {
             System.exit(0);
         }

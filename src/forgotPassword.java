@@ -147,7 +147,7 @@ public class forgotPassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to close Application?","Select",JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Bạn thực sự muốn thoát khỏi ứng dụng?","Select",JOptionPane.YES_NO_OPTION);
         if(a==0) {
             System.exit(0);
         }
@@ -175,7 +175,7 @@ public class forgotPassword extends javax.swing.JFrame {
                JOptionPane.showMessageDialog(null, e);
            }
            if(check==0) {
-               JOptionPane.showMessageDialog(null,"Incorrect Email");
+               JOptionPane.showMessageDialog(null,"Email không đúng");
            }
        }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -206,7 +206,7 @@ public class forgotPassword extends javax.swing.JFrame {
             }
         }
         if(check==0) {
-            JOptionPane.showMessageDialog(null,"Incorrect Answer");
+            JOptionPane.showMessageDialog(null,"Câu trả lời không đúng");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
