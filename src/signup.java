@@ -19,7 +19,7 @@ public class signup extends javax.swing.JFrame {
     public signup() {
         initComponents();
         setSize(1384,778);
-        setTitle("Sign Up");
+        setTitle("Đăng ký");
         setVisible(true);
     }
 
@@ -64,12 +64,12 @@ public class signup extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Sign Up");
+        jLabel1.setText("Đăng ký");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Name");
+        jLabel2.setText("Họ tên");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -79,22 +79,22 @@ public class signup extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Password");
+        jLabel4.setText("Mật khẩu");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Security Question");
+        jLabel5.setText("Câu hỏi bảo mật");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Answer");
+        jLabel6.setText("Câu trả lời");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Address");
+        jLabel7.setText("Địa chỉ");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, -1, -1));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -124,7 +124,7 @@ public class signup extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(102, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Sign Up");
+        jButton2.setText("Đăng ký");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -135,7 +135,7 @@ public class signup extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(102, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Login");
+        jButton3.setText("Đăng nhập");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -146,7 +146,7 @@ public class signup extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(102, 0, 0));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Forgot Password ?");
+        jButton4.setText("Quên mật khẩu ?");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -174,12 +174,12 @@ public class signup extends javax.swing.JFrame {
         String address = jTextField4.getText();
         if(name.equals("")||email.equals("")||password.equals("")||answer.equals("")||address.equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Every Field Is Required");
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ thông tin");
         }
         else 
         {
             String sql = "insert into users values ('"+name+"','"+email+"','"+password+"','"+securityQuestion+"','"+answer+"','"+address+"','false')";  
-            InsertUpdateDelete.setData(sql, "Registered Successfully");
+            InsertUpdateDelete.setData(sql, "Đăng ký thành công");
             setVisible(false);
             new signup().setVisible(true);
         }

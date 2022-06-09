@@ -52,7 +52,7 @@ public class forgotPassword extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Forgot Password ?");
+        jLabel1.setText("Quên mật khẩu ?");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 340, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -62,17 +62,17 @@ public class forgotPassword extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Security Question");
+        jLabel3.setText("Câu hỏi bảo mật");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Answer");
+        jLabel4.setText("Câu trả lời");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("New Password");
+        jLabel5.setText("Mật khẩu mới");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
@@ -86,7 +86,7 @@ public class forgotPassword extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(102, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Search");
+        jButton2.setText("Tìm kiếm");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -106,7 +106,7 @@ public class forgotPassword extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(102, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Save");
+        jButton3.setText("Lưu");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -117,7 +117,7 @@ public class forgotPassword extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(102, 0, 0));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Sign up");
+        jButton4.setText("Đăng ký");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -128,7 +128,7 @@ public class forgotPassword extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(102, 0, 0));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Login");
+        jButton5.setText("Đăng nhập");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -159,7 +159,7 @@ public class forgotPassword extends javax.swing.JFrame {
        if(email.equals(""))
        {
            check = 1;
-           JOptionPane.showMessageDialog(null, "Email Field Is Required");
+           JOptionPane.showMessageDialog(null, "Vui lòng nhập email");
        }
        else
        {
@@ -188,7 +188,7 @@ public class forgotPassword extends javax.swing.JFrame {
         if(answer.equals("")|| newPassword.equals(""))
         {
             check = 1;
-            JOptionPane.showMessageDialog(null,"All Field Is Required");
+            JOptionPane.showMessageDialog(null,"Vui lòng nhập đầy đủ thông tin");
         }
         else 
         {
@@ -197,7 +197,7 @@ public class forgotPassword extends javax.swing.JFrame {
                 if(rs.next())
                 {
                     check = 1;
-                    InsertUpdateDelete.setData("update users set password='"+ newPassword+"' where email='"+email+"'","Password Set Successfully");
+                    InsertUpdateDelete.setData("update users set password='"+ newPassword+"' where email='"+email+"'","Thiết lập mật khẩu thành công");
                     setVisible(false);
                     new forgotPassword().setVisible(true);
                 }

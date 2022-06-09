@@ -19,7 +19,7 @@ public class login extends javax.swing.JFrame {
     public login() {
         initComponents();
         setSize(1367,762);
-        setTitle("Login");
+        setTitle("Đăng nhập");
         setVisible(true);
     }
 
@@ -49,8 +49,8 @@ public class login extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Login");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, -1));
+        jLabel1.setText("Đăng nhập");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -59,7 +59,7 @@ public class login extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Password");
+        jLabel3.setText("Mật khẩu");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 420, -1, -1));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -71,18 +71,18 @@ public class login extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(102, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Login");
+        jButton1.setText("Đăng nhập");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 100, 20));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 120, 20));
 
         jButton2.setBackground(new java.awt.Color(102, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Sign up");
+        jButton2.setText("Đăng ký");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -93,7 +93,7 @@ public class login extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(102, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Forgot Password ?");
+        jButton3.setText("Quên mật khẩu ?");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -130,7 +130,7 @@ public class login extends javax.swing.JFrame {
         if(email.equals("")||password.equals(""))
         {
             check = 1;
-            JOptionPane.showMessageDialog(null,"Every Field Is Required");
+            JOptionPane.showMessageDialog(null,"Vui lòng nhập đầy đủ thông tin");
         }
         else if(email.equals("hms") && password.equals("admin"))
         {
@@ -159,7 +159,7 @@ public class login extends javax.swing.JFrame {
             }
         }
         if(check==0) {
-            JOptionPane.showMessageDialog(null,"Email or Mật khẩu sai");
+            JOptionPane.showMessageDialog(null,"Email hoặc Mật khẩu sai");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -61,7 +61,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(102, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Customer Details Bill.png"))); // NOI18N
         jLabel1.setText("Customer Details Bill");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 236, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 260, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -171,10 +171,10 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         TableModel model = jTable1.getModel();
         String id = model.getValueAt(index, 0).toString();
         try{
-            if ((new File("E:\\"+id+".pdf")).exists()){
+            if ((new File("D:\\"+id+".pdf")).exists()){
                 Process p = Runtime
                         .getRuntime()
-                        .exec("rundll32 url.dll,FileProtocolHandler E:\\"+id+".pdf");
+                        .exec("rundll32 url.dll,FileProtocolHandler D:\\"+id+".pdf");
             }
             else{
                 JOptionPane.showMessageDialog(null,"File này không tồn tại");

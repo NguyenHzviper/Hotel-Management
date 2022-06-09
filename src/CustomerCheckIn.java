@@ -320,7 +320,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
                     Query = "update room set status='Booked' where roomNo='"+roomNo+"'";
                     InsertUpdateDelete.setData(Query,"");
                     Query = "insert into customer(id,name,mobileNumber,nationality,gender,email,idProof,address,checkIn,roomNo,bed,roomType,pricePerDay) value("+id+",'"+name+"','"+mobileNumber+"','"+nationality+"','"+gender+"','"+email+"','"+idProof+"','"+address+"','"+checkIN+"','"+roomNo+"','"+bed+"','"+roomType+"','"+price+"')";
-                    InsertUpdateDelete.setData(Query, "Customer Check In Successfully");
+                    InsertUpdateDelete.setData(Query, "Check In thành công");
                     setVisible(false);
                     new CustomerCheckIn().setVisible(true);
                 }

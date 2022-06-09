@@ -207,7 +207,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(102, 0, 0));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Check Out");
+        jButton3.setText("Trả phòng");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -217,7 +217,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(102, 0, 0));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Clear");
+        jButton4.setText("Xóa");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -314,7 +314,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         InsertUpdateDelete.setData(Query,"");
         Query="update room set Status='Not Booked' where roomNo='"+roomNo+"'";
         InsertUpdateDelete.setData(Query,"");
-        String path="E:\\";
+        String path="D:\\";
         com.itextpdf.text.Document doc=new com.itextpdf.text.Document();
         try 
         {
@@ -322,9 +322,9 @@ public class CustomerCheckOut extends javax.swing.JFrame {
             doc.open();
             Paragraph paragraph1=new Paragraph("                               Hotel Management System\n");
             doc.add(paragraph1);
-            Paragraph paragraph2=new Paragraph("                               Hotel Management System\n");
+            Paragraph paragraph2=new Paragraph("***************************************************************************");
             doc.add(paragraph2);
-            Paragraph paragraph3=new Paragraph("\tBill ID: "+id+"\nCustomer Details:\nName: "+name+"\nMobile Number: "+mobileNumber+"\nEmail:"+email+"\n ");
+            Paragraph paragraph3=new Paragraph("\tMã hóa đơn: "+id+"\nChi tiết khách hàng:\nName: "+name+"\nMobile Number: "+mobileNumber+"\nEmail:"+email+"\n ");
             doc.add(paragraph3);
             doc.add(paragraph2);
             Paragraph paragraph4=new Paragraph("\tRoom Deatils:\nNumber: "+jTextField1.getText()+"\nType: "+roomType+"\nBed: "+bed+"\nPrice Per Day: "+jTextField6.getText()+"");
@@ -337,7 +337,8 @@ public class CustomerCheckOut extends javax.swing.JFrame {
             tb1.addCell("Total Amount Paid: "+totalAmount);
             doc.add(tb1);
             doc.add(paragraph2);
-            Paragraph paragraph5=new Paragraph("Thank you, Please Visit Again.");                      
+            Paragraph paragraph5=new Paragraph("Cảm ơn quý khách, hẹn gặp lại!"); 
+            doc.add(paragraph5);
         } 
         catch (Exception e) 
         {
@@ -349,11 +350,11 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         {
             try 
             {
-                if((new File("E:\\"+id+".pdf")).exists())  
+                if((new File("D:\\"+id+".pdf")).exists())  
                 {
                     Process p=Runtime
                             .getRuntime()
-                            .exec("rundll32 url.dll,FileProtocolHandler E:\\"+id+".pdf");
+                            .exec("rundll32 url.dll,FileProtocolHandler D:\\"+id+".pdf");
                 }
                 else
                     System.out.println("File này không tồn tại");
