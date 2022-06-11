@@ -42,6 +42,7 @@ public class manageRoom extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,6 +76,11 @@ public class manageRoom extends javax.swing.JFrame {
                 "Số phòng", "Loại phòng", "Loại giường", "Giá", "Trạng thái"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 110, 560, 484));
@@ -128,7 +134,18 @@ public class manageRoom extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(691, 436, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 440, 150, 30));
+
+        jButton3.setBackground(new java.awt.Color(102, 0, 0));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Xóa");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 440, 140, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/check.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 660));
@@ -178,6 +195,45 @@ public class manageRoom extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String roomNo = jTextField1.getText();
+       int ret = JOptionPane.showConfirmDialog(null,"Bạn có muốn xóa", "Xóa dữ liệu", JOptionPane.YES_NO_OPTION);
+        if (ret == JOptionPane.YES_OPTION){
+            // Xóa khỏi database
+            Connection con = new ConnectionProvider().getCon();
+            String strSQL = "Delete from room where roomNo = ?";
+            try{
+                PreparedStatement pres = con.prepareStatement(strSQL);
+                pres.setString(1, roomNo);
+                pres.executeUpdate();
+                con.close();
+                setVisible(false);
+                new manageRoom().setVisible(true);
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        int row = jTable1.getSelectedRow();
+        String maphong = (String) jTable1.getValueAt(row, 0);
+        ResultSet rs = Select.getData("Select * from room where roomNo = '"+maphong+"'");
+        try{
+            if (rs.next()){
+                jTextField1.setText(rs.getString(1));
+                jComboBox1.setSelectedItem(rs.getString(2));
+                jComboBox2.setSelectedItem(rs.getString(3));
+                jTextField2.setText(rs.getString(4));
+            }
+            rs.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -216,6 +272,7 @@ public class manageRoom extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;

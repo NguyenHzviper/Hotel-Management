@@ -163,12 +163,12 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         // TODO add your handling code here:
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
-        String id = model.getValueAt(index, 0).toString();
+        String filename = model.getValueAt(index, 0).toString();
         try{
-            if ((new File("D:\\"+id+".pdf")).exists()){
+            if ((new File("D:\\" + filename +".pdf")).exists()){
                 Process p = Runtime
                         .getRuntime()
-                        .exec("rundll32 url.dll,FileProtocolHandler D:\\"+id+".pdf");
+                        .exec("rundll32 url.dll,FileProtocolHandler D:\\"+filename+".pdf");
             }
             else{
                 JOptionPane.showMessageDialog(null,"File này không tồn tại");

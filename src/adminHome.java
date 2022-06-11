@@ -118,7 +118,7 @@ public class adminHome extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 242, 1240, 520));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/admin Home.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/d9829712-3373-43fe-99c8-dd848b4eb824.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -102, 1470, 970));
 
@@ -176,10 +176,10 @@ public class adminHome extends javax.swing.JFrame {
         else
             status = "true";
         try{
-            int a = JOptionPane.showConfirmDialog(null, "Do you really want to change status of" +email+"", "Select", JOptionPane.YES_NO_OPTION);
+            int a = JOptionPane.showConfirmDialog(null, "Bạn có muốn thay đổi trạng thái của " +email+"", "Select", JOptionPane.YES_NO_OPTION);
             if ( a== 0)
             {
-                InsertUpdateDelete.setData("update users set status= '"+status+"' where email='"+email+"'", "Status Change Successfully");
+                InsertUpdateDelete.setData("update users set status= '"+status+"' where email='"+email+"'", "Thay đổi trạng thái thành công");
                 setVisible(false);
                 new adminHome().setVisible(true);
             }
