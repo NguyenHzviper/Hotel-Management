@@ -163,7 +163,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         // TODO add your handling code here:
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
-        String filename = model.getValueAt(index, 0).toString();
+        String filename = model.getValueAt(index, 1).toString();
         try{
             if ((new File("D:\\" + filename +".pdf")).exists()){
                 Process p = Runtime
