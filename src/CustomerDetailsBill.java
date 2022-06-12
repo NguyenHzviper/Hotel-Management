@@ -58,8 +58,15 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable(){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                //all cells false
+                return false;
+            }
+        };
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -131,13 +138,27 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 1240, -1));
 
+        jButton3.setBackground(new java.awt.Color(102, 51, 0));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Thong ke");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 82, 100, 20));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 100, -1));
+
+        jButton4.setBackground(new java.awt.Color(102, 51, 0));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Xoa");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 80, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/check.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, -80, 1290, 690));
@@ -185,7 +206,10 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        int index = jTable1.getSelectedRow();
+        
+        if (evt.getClickCount() == 2 && !evt.isConsumed()) {
+            evt.consume();
+            int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
         String filename = model.getValueAt(index, 1).toString();
         try{
@@ -201,6 +225,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
+        } 
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -463,6 +488,20 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+         int ret = JOptionPane.showConfirmDialog(null,"Bạn có muốn xóa", "Xóa dữ liệu", JOptionPane.YES_NO_OPTION);
+        if (ret == JOptionPane.YES_OPTION)
+        {
+            int row = jTable1.getSelectedRow();
+            String id = (String)jTable1.getValueAt(row, 0);
+            String Query = "Delete from customer where id = '"+id+"'";
+            InsertUpdateDelete.setData(Query, "Successfully Deleted");
+            setVisible(false);
+            new CustomerDetailsBill().setVisible(true);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
      public String DinhDangTienTe(int SoTien) {
         // tạo 1 NumberFormat để định dạng số theo tiêu chuẩn EN
         Locale localeEN = new Locale("en", "EN");
@@ -511,6 +550,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
