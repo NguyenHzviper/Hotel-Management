@@ -338,7 +338,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
             try {
                 PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(path+""+filename+".pdf"));
                 document.open();
-                document.addAuthor("Lâm Trà My");
+                document.addAuthor("Nhóm 8");
                 document.addCreationDate();
                 document.addCreator("QLKS");
                 document.addTitle("Hóa đơn dịch vụ");
@@ -363,7 +363,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 
                 
                 //Chèn logo
-                Image logo = Image.getInstance("images/hospital.png");
+                Image logo = Image.getInstance("images/2.jpg");
                 logo.setAbsolutePosition(80, 750);
                 logo.scaleAbsolute(50, 50);
                 document.add(logo);
@@ -374,12 +374,12 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 document.add(prgTenKS);
                 
                 //Chèn địa chỉ phòng khám
-                Paragraph prgDiaChiKS = new Paragraph("Khu phố 6, phường Bình Thọ, Tp.Thủ Đức, Tp. Hồ Chí Minh", fontNoiDung2);
+                Paragraph prgDiaChiKS = new Paragraph("Khu phố 6, phường Linh Trung, Tp.Thủ Đức, Tp. Hồ Chí Minh", fontNoiDung2);
                 prgDiaChiKS.setIndentationLeft(100);
                 document.add(prgDiaChiKS);
                 
                 //Chèn số DDT phòng khám
-                Paragraph prgSoDTKS = new Paragraph("Số Điện thoại: 028 3456 7890", fontNoiDung2);
+                Paragraph prgSoDTKS = new Paragraph("Số Điện thoại: 012 345 6789", fontNoiDung2);
                 prgSoDTKS.setIndentationLeft(100);
                 document.add(prgSoDTKS);
                 
