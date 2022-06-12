@@ -138,27 +138,27 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 1240, -1));
 
-        jButton3.setBackground(new java.awt.Color(102, 51, 0));
+        jButton3.setBackground(new java.awt.Color(102, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Thong ke");
+        jButton3.setText("Thống kê");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 100, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 80, 130, -1));
 
-        jButton4.setBackground(new java.awt.Color(102, 51, 0));
+        jButton4.setBackground(new java.awt.Color(102, 0, 0));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Xoa");
+        jButton4.setText("Xóa");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 80, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 80, 120, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/check.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, -80, 1290, 690));
@@ -231,16 +231,16 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         Document document = new Document(PageSize.A4);
-            String filename = "Thong ke doanh thu";
+            String filename = "Thống kê doanh thu";
             String path = "D:\\";
             try {
                 PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(path+""+filename+".pdf"));
                 document.open();
-                document.addAuthor("Lâm Trà My");
+                document.addAuthor("Nhóm 8");
                 document.addCreationDate();
                 document.addCreator("QLKS");
-                document.addTitle("Hóa đơn dịch vụ");
-                document.addSubject("Hóa đơn dịch vụ");
+                document.addTitle("Hóa đơn thống kê");
+                document.addSubject("Hóa đơn thống kê");
                 
                 //Định dạng Font Tiêu đề
                 File filefontTieuDe = new File("fonts/vuArialBold.ttf");
@@ -261,7 +261,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
                 
                 
                 //Chèn logo
-                Image logo = Image.getInstance("images/hospital.png");
+                Image logo = Image.getInstance("images/2.jpg");
                 logo.setAbsolutePosition(80, 750);
                 logo.scaleAbsolute(50, 50);
                 document.add(logo);
@@ -272,17 +272,17 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
                 document.add(prgTenKS);
                 
                 //Chèn địa chỉ phòng khám
-                Paragraph prgDiaChiKS = new Paragraph("Khu phố 6, phường Bình Thọ, Tp.Thủ Đức, Tp. Hồ Chí Minh", fontNoiDung2);
+                Paragraph prgDiaChiKS = new Paragraph("Khu phố 6, phường Linh Trung, Tp.Thủ Đức, Tp. Hồ Chí Minh", fontNoiDung2);
                 prgDiaChiKS.setIndentationLeft(100);
                 document.add(prgDiaChiKS);
                 
                 //Chèn số DDT phòng khám
-                Paragraph prgSoDTKS = new Paragraph("Số Điện thoại: 028 3456 7890", fontNoiDung2);
+                Paragraph prgSoDTKS = new Paragraph("Số Điện thoại: 012 345 6789", fontNoiDung2);
                 prgSoDTKS.setIndentationLeft(100);
                 document.add(prgSoDTKS);
                 
                 //Chèn Tiêu đề pdf
-                Paragraph prgTieuDe = new Paragraph("TONG DOANH THU", fontTieuDe1);
+                Paragraph prgTieuDe = new Paragraph("TỔNG DOANH THU", fontTieuDe1);
                 prgTieuDe.setAlignment(Element.ALIGN_CENTER);
                 prgTieuDe.setSpacingBefore(10);
                 prgTieuDe.setSpacingAfter(10);
@@ -418,7 +418,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
             }
             // Mở file pdf sau khi định dạng và write
             try {
-                File file = new File("reports/" + filename +".pdf");
+                File file = new File("D:\\" + filename +".pdf");
                 if(!Desktop.isDesktopSupported()) {
                     System.out.println("not supported");
                     return;
@@ -432,38 +432,6 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
             }
            
         
-        
-        /*String path="D:\\";
-        com.itextpdf.text.Document doc=new com.itextpdf.text.Document();
-        try 
-        {            
-            PdfWriter.getInstance(doc, new FileOutputStream(path+""+id+".pdf"));
-            doc.open();
-            Paragraph paragraph1=new Paragraph("                               Hotel Management System\n");
-            doc.add(paragraph1);
-            Paragraph paragraph2=new Paragraph("***************************************************************************");
-            doc.add(paragraph2);
-            Paragraph paragraph3=new Paragraph("\tMã hóa đơn: "+id+"\nChi tiết khách hàng:\nHọ tên: "+name+"\nSố điện thoại: "+mobileNumber+"\nEmail:"+email+"\n ");
-            doc.add(paragraph3);
-            doc.add(paragraph2);
-            Paragraph paragraph4=new Paragraph("\tChi tiết phòng:\nSố phòng: "+jTextField1.getText()+"\nLoại phòng: "+roomType+"\nLoại giường: "+bed+"\nGiá/ngày: "+jTextField6.getText()+"");
-            doc.add(paragraph4);
-            doc.add(paragraph2);
-            PdfPTable tb1=new PdfPTable(4);
-            tb1.addCell("Check IN Date: "+jTextField3.getText());
-            tb1.addCell("Check OUT Date: "+checkOut);
-            tb1.addCell("No of Days Stay: "+numberOfDayStay);
-            tb1.addCell("Total Amount Paid: "+totalAmount);
-            doc.add(tb1);
-            doc.add(paragraph2);
-            Paragraph paragraph5=new Paragraph("Cảm ơn quý khách, hẹn gặp lại!"); 
-            doc.add(paragraph5);
-        } 
-        catch (Exception e) 
-        {
-            JOptionPane.showMessageDialog(null,e);
-        }
-        doc.close();*/
         int a=JOptionPane.showConfirmDialog(null, "Bạn có muốn in hóa đơn","Select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
@@ -496,7 +464,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
             int row = jTable1.getSelectedRow();
             String id = (String)jTable1.getValueAt(row, 0);
             String Query = "Delete from customer where id = '"+id+"'";
-            InsertUpdateDelete.setData(Query, "Successfully Deleted");
+            InsertUpdateDelete.setData(Query, "Xóa thành công");
             setVisible(false);
             new CustomerDetailsBill().setVisible(true);
         }
