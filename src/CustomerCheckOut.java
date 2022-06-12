@@ -130,6 +130,11 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 "ID", "Họ tên", "SĐT", "Quốc gia", "Giới tính", "Email", "CMMD/CCCD", "Địa chỉ", "Ngày nhận phòng", "Số phòng", "Loại giường", "Loại phòng", "Giá/ngày"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
@@ -456,9 +461,8 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                  
                  try {
                     int TongTien = 0;
-                    
-                    ResultSet rs = Select.getData("Select * from customer");
-                    
+                    String RoomNo = jTextField1.getText();
+                    ResultSet rs = Select.getData("Select * from customer where roomNo ='"+RoomNo+"'");
                     if(rs.next()) {
                     
                     PdfPCell cellRoomNo = new PdfPCell (new Paragraph(rs.getString(10),fontNoiDung3));
@@ -616,6 +620,50 @@ public class CustomerCheckOut extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        int row = jTable1.getSelectedRow();
+        String roomNo = (String) jTable1.getValueAt(row, 9);
+        try 
+        {
+            ResultSet rs=Select.getData("select *from customer where roomNo='"+roomNo+"' and checkout is NULL");
+            if(rs.next())
+            {
+                jTextField1.setEditable(false);
+                id=rs.getInt(1);
+                jTextField1.setText(rs.getString("roomNo"));
+                jTextField2.setText(rs.getString(2));
+                jTextField3.setText(rs.getString(9));          
+                jTextField5.setText(rs.getString(3));
+                jTextField6.setText(rs.getString(13));
+                
+                SimpleDateFormat myFormat=new SimpleDateFormat("yyyy/MM/dd");
+                Calendar cal=Calendar.getInstance();
+                jTextField4.setText(myFormat.format(cal.getTime()));
+                String dataBeforeString =rs.getString(9);
+                java.util.Date dateBefore=myFormat.parse(dataBeforeString);
+                String dateAfterString=myFormat.format(cal.getTime());
+                java.util.Date dateAfter=myFormat.parse(dateAfterString);
+                long difference=dateAfter.getTime()-dateBefore.getTime();
+                int noOfDayStay=(int)(difference/(1000*60*60*24));
+                if(noOfDayStay==0)
+                    noOfDayStay=1;
+                jTextField7.setText(String.valueOf(noOfDayStay));
+                float price=Float.parseFloat(jTextField6.getText());
+                
+                jTextField8.setText(String.valueOf(noOfDayStay*price));
+                jTextField9.setText(rs.getString(6));
+                roomType=rs.getString(12);
+                bed=rs.getString(11);
+            }
+        } 
+        catch (Exception e) 
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
+    }//GEN-LAST:event_jTable1MouseClicked
 
     public String DinhDangTienTe(int SoTien) {
         // tạo 1 NumberFormat để định dạng số theo tiêu chuẩn EN
