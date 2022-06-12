@@ -173,7 +173,7 @@
               <Table columnCount="5" rowCount="0">
                 <Column editable="true" title="H&#x1ecd; t&#xea;n" type="java.lang.Object"/>
                 <Column editable="true" title="Email" type="java.lang.Object"/>
-                <Column editable="true" title="Security Query" type="java.lang.Object"/>
+                <Column editable="true" title="C&#xe2;u h&#x1ecf;i b&#x1ea3;o m&#x1ead;t" type="java.lang.Object"/>
                 <Column editable="true" title="&#x110;&#x1ecb;a ch&#x1ec9;" type="java.lang.Object"/>
                 <Column editable="true" title="Tr&#x1ea1;ng th&#xe1;i" type="java.lang.Object"/>
               </Table>

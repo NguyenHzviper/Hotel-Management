@@ -288,11 +288,6 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
                 prgTieuDe.setSpacingAfter(10);
                 document.add(prgTieuDe);
                 
-                 //chèn thông tin các dịch vụ đã sử dụng
-                Paragraph prgHoaDon = new Paragraph("Chi tiết hóa đơn: ", fontTieuDe3);
-                prgHoaDon.setSpacingBefore(10);
-                prgHoaDon.setSpacingAfter(10);
-                document.add(prgHoaDon);
                 
                 //Định nghĩa số côt, chiều rộng bảng
                 PdfPTable tableDV = new PdfPTable(6); //6 cột

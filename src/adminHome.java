@@ -106,7 +106,7 @@ public class adminHome extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Họ tên", "Email", "Security Query", "Địa chỉ", "Trạng thái"
+                "Họ tên", "Email", "Câu hỏi bảo mật", "Địa chỉ", "Trạng thái"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {

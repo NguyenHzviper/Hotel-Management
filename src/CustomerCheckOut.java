@@ -547,39 +547,6 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 e.printStackTrace();
             }
            
-        
-        
-        /*String path="D:\\";
-        com.itextpdf.text.Document doc=new com.itextpdf.text.Document();
-        try 
-        {            
-            PdfWriter.getInstance(doc, new FileOutputStream(path+""+id+".pdf"));
-            doc.open();
-            Paragraph paragraph1=new Paragraph("                               Hotel Management System\n");
-            doc.add(paragraph1);
-            Paragraph paragraph2=new Paragraph("***************************************************************************");
-            doc.add(paragraph2);
-            Paragraph paragraph3=new Paragraph("\tMã hóa đơn: "+id+"\nChi tiết khách hàng:\nHọ tên: "+name+"\nSố điện thoại: "+mobileNumber+"\nEmail:"+email+"\n ");
-            doc.add(paragraph3);
-            doc.add(paragraph2);
-            Paragraph paragraph4=new Paragraph("\tChi tiết phòng:\nSố phòng: "+jTextField1.getText()+"\nLoại phòng: "+roomType+"\nLoại giường: "+bed+"\nGiá/ngày: "+jTextField6.getText()+"");
-            doc.add(paragraph4);
-            doc.add(paragraph2);
-            PdfPTable tb1=new PdfPTable(4);
-            tb1.addCell("Check IN Date: "+jTextField3.getText());
-            tb1.addCell("Check OUT Date: "+checkOut);
-            tb1.addCell("No of Days Stay: "+numberOfDayStay);
-            tb1.addCell("Total Amount Paid: "+totalAmount);
-            doc.add(tb1);
-            doc.add(paragraph2);
-            Paragraph paragraph5=new Paragraph("Cảm ơn quý khách, hẹn gặp lại!"); 
-            doc.add(paragraph5);
-        } 
-        catch (Exception e) 
-        {
-            JOptionPane.showMessageDialog(null,e);
-        }
-        doc.close();*/
         int a=JOptionPane.showConfirmDialog(null, "Bạn có muốn in hóa đơn","Select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
