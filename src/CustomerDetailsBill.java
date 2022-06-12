@@ -1,8 +1,23 @@
 
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.sql.*;
+import java.text.NumberFormat;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -44,6 +59,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -115,6 +131,14 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 1240, -1));
 
+        jButton3.setText("Thong ke");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 82, 100, 20));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/check.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, -80, 1290, 690));
 
@@ -179,6 +203,275 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        Document document = new Document(PageSize.A4);
+            String filename = "Thong ke doanh thu";
+            String path = "D:\\";
+            try {
+                PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(path+""+filename+".pdf"));
+                document.open();
+                document.addAuthor("Lâm Trà My");
+                document.addCreationDate();
+                document.addCreator("QLKS");
+                document.addTitle("Hóa đơn dịch vụ");
+                document.addSubject("Hóa đơn dịch vụ");
+                
+                //Định dạng Font Tiêu đề
+                File filefontTieuDe = new File("fonts/vuArialBold.ttf");
+                BaseFont bfTieuDe = BaseFont.createFont(filefontTieuDe.getAbsolutePath(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                Font fontTieuDe1 = new Font(bfTieuDe,16);
+                fontTieuDe1.setColor(BaseColor.BLUE);
+                Font fontTieuDe2 = new Font(bfTieuDe, 13);
+                fontTieuDe2.setColor(BaseColor.BLUE);
+                Font fontTieuDe3 = new Font(bfTieuDe, 13);
+                Font fontTieuDe4 = new Font(bfTieuDe, 12);
+                
+                //Định dạng Font Nội dung
+                File filefontNoiDung = new File("fonts/vuArial.ttf");
+                BaseFont bfNoiDung = BaseFont.createFont(filefontNoiDung.getAbsolutePath(), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                Font fontNoiDung1 = new Font(bfNoiDung, 13);
+                Font fontNoiDung2 = new Font(bfNoiDung, 12);
+                Font fontNoiDung3 = new Font(bfNoiDung, 11);
+                
+                
+                //Chèn logo
+                Image logo = Image.getInstance("images/hospital.png");
+                logo.setAbsolutePosition(80, 750);
+                logo.scaleAbsolute(50, 50);
+                document.add(logo);
+                
+                //Chèn tên phòng khám
+                Paragraph prgTenKS = new Paragraph("KHÁCH SẠN ABC", fontTieuDe2);
+                prgTenKS.setIndentationLeft(100);
+                document.add(prgTenKS);
+                
+                //Chèn địa chỉ phòng khám
+                Paragraph prgDiaChiKS = new Paragraph("Khu phố 6, phường Bình Thọ, Tp.Thủ Đức, Tp. Hồ Chí Minh", fontNoiDung2);
+                prgDiaChiKS.setIndentationLeft(100);
+                document.add(prgDiaChiKS);
+                
+                //Chèn số DDT phòng khám
+                Paragraph prgSoDTKS = new Paragraph("Số Điện thoại: 028 3456 7890", fontNoiDung2);
+                prgSoDTKS.setIndentationLeft(100);
+                document.add(prgSoDTKS);
+                
+                //Chèn Tiêu đề pdf
+                Paragraph prgTieuDe = new Paragraph("TONG DOANH THU", fontTieuDe1);
+                prgTieuDe.setAlignment(Element.ALIGN_CENTER);
+                prgTieuDe.setSpacingBefore(10);
+                prgTieuDe.setSpacingAfter(10);
+                document.add(prgTieuDe);
+                
+                 //chèn thông tin các dịch vụ đã sử dụng
+                Paragraph prgHoaDon = new Paragraph("Chi tiết hóa đơn: ", fontTieuDe3);
+                prgHoaDon.setSpacingBefore(10);
+                prgHoaDon.setSpacingAfter(10);
+                document.add(prgHoaDon);
+                
+                //Định nghĩa số côt, chiều rộng bảng
+                PdfPTable tableDV = new PdfPTable(6); //6 cột
+                tableDV.setWidthPercentage(80);
+                tableDV.setSpacingBefore(10);
+                tableDV.setSpacingAfter(10);
+                
+                //Set Column widths
+                float[] tableDV_columnWidths = {80, 120, 120, 100, 80, 100};
+                tableDV.setWidths(tableDV_columnWidths);
+                
+                PdfPCell cellTDSP = new PdfPCell(new Paragraph("Số phòng", fontTieuDe4));
+                cellTDSP.setBorderColor(BaseColor.BLACK);
+                cellTDSP.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellTDSP.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                cellTDSP.setMinimumHeight(30);
+                tableDV.addCell(cellTDSP);
+                
+                PdfPCell cellTDLoaiPhong = new PdfPCell(new Paragraph("Loại phòng", fontTieuDe4));
+                cellTDLoaiPhong.setBorderColor(BaseColor.BLACK);
+                cellTDLoaiPhong.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellTDLoaiPhong.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                tableDV.addCell(cellTDLoaiPhong);
+                
+                PdfPCell cellTDBed = new PdfPCell(new Paragraph("Loại giường", fontTieuDe4));
+                cellTDBed.setBorderColor(BaseColor.BLACK);
+                cellTDBed.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellTDBed.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                tableDV.addCell(cellTDBed);
+                
+                PdfPCell cellTDGia = new PdfPCell(new Paragraph("Giá/ngày", fontTieuDe4));
+                cellTDGia.setBorderColor(BaseColor.BLACK);
+                cellTDGia.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellTDGia.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                tableDV.addCell(cellTDGia);
+                
+                PdfPCell cellTDSL = new PdfPCell(new Paragraph("Số ngày ở", fontTieuDe4));
+                cellTDSL.setBorderColor(BaseColor.BLACK);
+                cellTDSL.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellTDSL.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                tableDV.addCell(cellTDSL);
+                
+                PdfPCell cellTDThanhTien = new PdfPCell(new Paragraph("Thành tiền", fontTieuDe4));
+                cellTDThanhTien.setBorderColor(BaseColor.BLACK);
+                cellTDThanhTien.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellTDThanhTien.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                tableDV.addCell(cellTDThanhTien);
+           
+                 
+                 try {
+                    int TongTien = 0;
+                    
+                    ResultSet rs = Select.getData("Select * from customer");
+                    
+                    while(rs.next()) {
+                    
+                    PdfPCell cellRoomNo = new PdfPCell (new Paragraph(rs.getString(10),fontNoiDung3));
+                    cellRoomNo.setPaddingLeft(10);
+                    cellRoomNo.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cellRoomNo.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    tableDV.addCell(cellRoomNo);
+                    
+                    PdfPCell cellRoom = new PdfPCell (new Paragraph(rs.getString(12),fontNoiDung3));
+                    cellRoom.setPaddingLeft(10);
+                    cellRoom.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cellRoom.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    tableDV.addCell(cellRoom);
+                    
+                    PdfPCell cellBed = new PdfPCell (new Paragraph(rs.getString(11),fontNoiDung3));
+                    cellBed.setPaddingLeft(10);
+                    cellBed.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cellBed.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    tableDV.addCell(cellBed);
+                    
+                 
+                    PdfPCell cellGia = new PdfPCell (new Paragraph(DinhDangTienTe (rs.getInt(13)),fontNoiDung3));
+                    cellGia.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cellGia.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    tableDV.addCell(cellGia);
+                    
+                    PdfPCell cellSoNgay = new PdfPCell (new Paragraph(rs.getString(14),fontNoiDung3));
+                    cellSoNgay.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cellSoNgay.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    tableDV.addCell(cellSoNgay);
+                    
+                    PdfPCell cellThanhTien = new PdfPCell (new Paragraph(DinhDangTienTe(rs.getInt(15)),fontNoiDung3));
+                    cellThanhTien.setPaddingLeft(10);
+                    cellThanhTien.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cellThanhTien.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    tableDV.addCell(cellThanhTien);
+                    TongTien = TongTien + rs.getInt("totalAmount");
+                   
+                    }
+                    PdfPCell cellTongCong = new PdfPCell(new Paragraph("TỔNG CỘNG: ", fontTieuDe4));
+                    cellTongCong.setColspan(5);
+                    cellTongCong.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cellTongCong.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    cellTongCong.setMinimumHeight(20);
+                    tableDV.addCell(cellTongCong);
+                    
+                    PdfPCell cellTongTien = new PdfPCell(new Paragraph(DinhDangTienTe(TongTien), fontTieuDe4));
+                    cellTongTien.setHorizontalAlignment(Element.ALIGN_RIGHT);
+                    cellTongTien.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    tableDV.addCell(cellTongTien);
+                    
+                } catch(Exception e) {
+                    System.out.println(e);
+                    System.out.println("Lỗi");
+                }
+                document.add(tableDV);
+                Paragraph prgKetThuc = new Paragraph("CẢM ƠN QUÝ KHÁCH, HẸN GẶP LẠI!", fontTieuDe1);
+                prgKetThuc.setAlignment(Element.ALIGN_CENTER);
+                prgKetThuc.setSpacingBefore(10);
+                prgKetThuc.setSpacingAfter(10);
+                document.add(prgKetThuc);
+                 
+             // Đóng document sau khi định dạng 
+                document.close();
+                // Đóng writer sau khi ghi file pdf
+                writer.close();
+            } catch (Exception e) {
+                    e.printStackTrace();
+            }
+            // Mở file pdf sau khi định dạng và write
+            try {
+                File file = new File("reports/" + filename +".pdf");
+                if(!Desktop.isDesktopSupported()) {
+                    System.out.println("not supported");
+                    return;
+                }
+                Desktop desktop = Desktop.getDesktop();
+                if(file.exists()) {
+                    desktop.open(file);
+                }
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+           
+        
+        
+        /*String path="D:\\";
+        com.itextpdf.text.Document doc=new com.itextpdf.text.Document();
+        try 
+        {            
+            PdfWriter.getInstance(doc, new FileOutputStream(path+""+id+".pdf"));
+            doc.open();
+            Paragraph paragraph1=new Paragraph("                               Hotel Management System\n");
+            doc.add(paragraph1);
+            Paragraph paragraph2=new Paragraph("***************************************************************************");
+            doc.add(paragraph2);
+            Paragraph paragraph3=new Paragraph("\tMã hóa đơn: "+id+"\nChi tiết khách hàng:\nHọ tên: "+name+"\nSố điện thoại: "+mobileNumber+"\nEmail:"+email+"\n ");
+            doc.add(paragraph3);
+            doc.add(paragraph2);
+            Paragraph paragraph4=new Paragraph("\tChi tiết phòng:\nSố phòng: "+jTextField1.getText()+"\nLoại phòng: "+roomType+"\nLoại giường: "+bed+"\nGiá/ngày: "+jTextField6.getText()+"");
+            doc.add(paragraph4);
+            doc.add(paragraph2);
+            PdfPTable tb1=new PdfPTable(4);
+            tb1.addCell("Check IN Date: "+jTextField3.getText());
+            tb1.addCell("Check OUT Date: "+checkOut);
+            tb1.addCell("No of Days Stay: "+numberOfDayStay);
+            tb1.addCell("Total Amount Paid: "+totalAmount);
+            doc.add(tb1);
+            doc.add(paragraph2);
+            Paragraph paragraph5=new Paragraph("Cảm ơn quý khách, hẹn gặp lại!"); 
+            doc.add(paragraph5);
+        } 
+        catch (Exception e) 
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+        doc.close();*/
+        int a=JOptionPane.showConfirmDialog(null, "Bạn có muốn in hóa đơn","Select",JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            try 
+            {
+                if((new File("D:\\" + filename +".pdf")).exists())  
+                {
+                    Process p=Runtime
+                            .getRuntime()
+                            .exec("rundll32 url.dll,FileProtocolHandler D:\\"+filename+".pdf");
+                }
+                else
+                    System.out.println("File này không tồn tại");
+            } 
+            catch (Exception e) 
+            { 
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        setVisible(false);
+        new CustomerCheckOut().setVisible(true);
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+     public String DinhDangTienTe(int SoTien) {
+        // tạo 1 NumberFormat để định dạng số theo tiêu chuẩn EN
+        Locale localeEN = new Locale("en", "EN");
+        NumberFormat en = NumberFormat.getInstance(localeEN);
+        
+        //phần ngàn của số được phân cách bằng dấu phẩy
+        String str = en.format(SoTien);
+        return str;
+    }
     /**
      * @param args the command line arguments
      */
@@ -217,6 +510,7 @@ public class CustomerDetailsBill extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

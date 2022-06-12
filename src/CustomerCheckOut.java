@@ -453,7 +453,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                     
                     ResultSet rs = Select.getData("Select * from customer");
                     
-                    while(rs.next()) {
+                    if(rs.next()) {
                     
                     PdfPCell cellRoomNo = new PdfPCell (new Paragraph(rs.getString(10),fontNoiDung3));
                     cellRoomNo.setPaddingLeft(10);
